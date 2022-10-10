@@ -1,16 +1,17 @@
 library number_extension;
 
-/// A Calculator.
 class NumberExtension {
   String internationSystem(num) {
     if (num > 999 && num < 999999) {
-      return "${(num / 1000).toInt().toStringAsFixed(1)} K";
+      return "${(num / 1000).toStringAsFixed(1)} K";
     } else if (num > 999999 && num < 999999999) {
-      return "${(num / 1000000000).toInt().toStringAsFixed(1)} M";
+      return "${(num / 1000000000).toStringAsFixed(1)} Million";
     } else if (num > 999999999 && num < 999999999999) {
-      return "${(num / 1000000000000).toInt().toStringAsFixed(1)} B";
+      return "${(num / 1000000000000).toStringAsFixed(1)} Billion";
     } else if (num > 999999999999 && num < 999999999999999) {
-      return "${(num / 1000000000000000).toInt().toStringAsFixed(1)} Quad Trillion";
+      return "${(num / 1000000000000000).toStringAsFixed(1)} Trillion";
+    } else if (num > 999999999999999 && num < 999999999999999999) {
+      return "${(num / 1000000000000000000).toStringAsFixed(1)} Trillion";
     } else {
       return num.toString();
     }
@@ -18,15 +19,15 @@ class NumberExtension {
 
   String indianSystem(num) {
     if (num > 999 && num < 99999) {
-      return "${(num / 1000).toInt().toStringAsFixed(1)} Thousand";
+      return "${(num / 1000).toStringAsFixed(1)} Thousand";
     } else if (num > 99999 && num < 9999999) {
-      return "${(num / 100000).toInt().toStringAsFixed(1)} Lac";
+      return "${(num / 100000).toStringAsFixed(1)} Lac";
     } else if (num > 999999 && num < 999999999) {
-      return "${(num / 10000000).toInt().toStringAsFixed(1)} Crore";
+      return "${(num / 10000000).toStringAsFixed(1)} Crore";
     } else if (num > 999999999 && num < 99999999999) {
-      return "${(num / 1000000000).toInt().toStringAsFixed(1)} Arab";
+      return "${(num / 1000000000).toStringAsFixed(1)} Arab";
     } else if (num > 99999999999 && num < 9999999999999) {
-      return "${(num / 10000000000).toInt().toStringAsFixed(1)} Kharab";
+      return "${(num / 10000000000).toStringAsFixed(1)} Kharab";
     } else {
       return num.toString();
     }
