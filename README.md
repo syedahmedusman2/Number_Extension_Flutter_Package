@@ -1,14 +1,25 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+This package is used to remove large numeric values from the value and add numeric extension to it like Million, Billion, etc.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+The package supports Internation System and Indian System.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
+For using International system, follow the below snipit.
 
-This package is used to remove large numeric values from the value and add numeric extension to it.
+```dart
+// This function returns String
+String result = NumberExtension.internationSystem(100000);
+//Result: 100 K
+```
+
+For using Indian system, follow the below snipit.
+
+```dart
+// This function returns String
+String result = NumberExtension.indianSystem(100000);
+//Result: 1 Lac
+```
+
+For controlling the points after value, use the following optional parameter:
+
+```dart
+String result = NumberExtension.internationSystem(1554400, numbersAfterPoint: 3);
+```

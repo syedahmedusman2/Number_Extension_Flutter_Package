@@ -1,5 +1,6 @@
 library valueber_extension;
 
+//We could simply use "${(value / 1000).toStringAsFixed(1)} K" like this but for controlling zero in the result, we are using the below condition;
 class NumberExtension {
   static String internationSystem(value, {numbersAfterPoint = 1}) {
     if (value > 999 && value < 999999) {
