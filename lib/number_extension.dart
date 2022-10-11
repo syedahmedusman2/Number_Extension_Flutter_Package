@@ -1,35 +1,35 @@
-library number_extension;
+library valueber_extension;
 
 class NumberExtension {
-  String internationSystem(num) {
-    if (num > 999 && num < 999999) {
-      return "${(num / 1000).toStringAsFixed(1)} K";
-    } else if (num > 999999 && num < 999999999) {
-      return "${(num / 1000000000).toStringAsFixed(1)} Million";
-    } else if (num > 999999999 && num < 999999999999) {
-      return "${(num / 1000000000000).toStringAsFixed(1)} Billion";
-    } else if (num > 999999999999 && num < 999999999999999) {
-      return "${(num / 1000000000000000).toStringAsFixed(1)} Trillion";
-    } else if (num > 999999999999999 && num < 999999999999999999) {
-      return "${(num / 1000000000000000000).toStringAsFixed(1)} Trillion";
+  static String internationSystem(value, {numbersAfterPoint = 1}) {
+    if (value > 999 && value < 999999) {
+      return "${(value / 1000).toStringAsFixed((value / 1000).truncateToDouble() == (value / 1000) ? 0 : numbersAfterPoint)} K";
+    } else if (value > 999999 && value < 999999999) {
+      return "${(value / 1000000).toStringAsFixed((value / 1000000).truncateToDouble() == (value / 1000000) ? 0 : numbersAfterPoint)} Million";
+    } else if (value > 999999999 && value < 999999999999) {
+      return "${(value / 1000000000).toStringAsFixed((value / 1000000000).truncateToDouble() == (value / 1000000000) ? 0 : numbersAfterPoint)} Billion";
+    } else if (value > 999999999999 && value < 999999999999999) {
+      return "${(value / 1000000000000).toStringAsFixed((value / 1000000000000).truncateToDouble() == (value / 1000000000000) ? 0 : numbersAfterPoint)} Trillion";
+    } else if (value > 999999999999999) {
+      return "${(value / 1000000000000000).toStringAsFixed((value / 1000000000000000).truncateToDouble() == (value / 1000000000000000) ? 0 : numbersAfterPoint)} Quad Trillion";
     } else {
-      return num.toString();
+      return value.toString();
     }
   }
 
-  String indianSystem(num) {
-    if (num > 999 && num < 99999) {
-      return "${(num / 1000).toStringAsFixed(1)} Thousand";
-    } else if (num > 99999 && num < 9999999) {
-      return "${(num / 100000).toStringAsFixed(1)} Lac";
-    } else if (num > 999999 && num < 999999999) {
-      return "${(num / 10000000).toStringAsFixed(1)} Crore";
-    } else if (num > 999999999 && num < 99999999999) {
-      return "${(num / 1000000000).toStringAsFixed(1)} Arab";
-    } else if (num > 99999999999 && num < 9999999999999) {
-      return "${(num / 10000000000).toStringAsFixed(1)} Kharab";
+  static String indianSystem(value, {numbersAfterPoint = 1}) {
+    if (value > 999 && value < 99999) {
+      return "${(value / 1000).toStringAsFixed((value / 1000).truncateToDouble() == (value / 1000) ? 0 : numbersAfterPoint)} Thousand";
+    } else if (value > 99999 && value < 9999999) {
+      return "${(value / 100000).toStringAsFixed((value / 100000).truncateToDouble() == (value / 100000) ? 0 : numbersAfterPoint)} Lac";
+    } else if (value > 999999 && value < 999999999) {
+      return "${(value / 10000000).toStringAsFixed((value / 10000000).truncateToDouble() == (value / 10000000) ? 0 : numbersAfterPoint)} Crore";
+    } else if (value > 999999999 && value < 99999999999) {
+      return "${(value / 1000000000).toStringAsFixed((value / 1000000000).truncateToDouble() == (value / 1000000000) ? 0 : numbersAfterPoint)} Arab";
+    } else if (value > 99999999999) {
+      return "${(value / 100000000000).toStringAsFixed((value / 100000000000).truncateToDouble() == (value / 100000000000) ? 0 : numbersAfterPoint)} Kharab";
     } else {
-      return num.toString();
+      return value.toString();
     }
   }
 }
