@@ -1,6 +1,6 @@
 name: number_extension
 description: A package to remove large numeric values from the value and add numeric extension to it.
-version: 0.0.2
+version: 0.0.4
 homepage: https://github.com/syedahmedusman2/Number-Extension
 
 environment:

@@ -5,3 +5,6 @@
 ## 0.0.2
 
 * Fix bugs from initial release
+
+## 0.0.4
+* Add example
